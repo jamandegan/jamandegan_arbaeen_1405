@@ -192,3 +192,64 @@ text-align:center;
   margin-left:4px;
   box-shadow:0 0 4px rgba(142,68,173,.65);
 }
+/* تنظیمات موبایل */
+@media (max-width: 768px){
+
+  body{
+    overflow-x:hidden;
+  }
+
+  .cards{
+    display:flex;
+    flex-direction:column;
+    width:90%;
+    margin:auto;
+    gap:15px;
+  }
+
+  .card{
+    width:100%;
+    min-height:100px;
+  }
+
+  .search-box{
+    width:90%;
+    margin:auto;
+    font-size:14px;
+  }
+
+  .filters{
+    width:95%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+  }
+
+  .filters button{
+    font-size:13px;
+    padding:10px 12px;
+  }
+
+  #map{
+    width:100%;
+    height:55vh;
+    border-radius:15px;
+  }
+
+  .transportNotice{
+    width:90%;
+    margin:auto;
+    padding:15px;
+    font-size:14px;
+  }
+
+  h1{
+    font-size:24px;
+  }
+
+  .logo img{
+    max-width:180px;
+  }
+
+}
