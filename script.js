@@ -981,23 +981,13 @@ let markers=[];
 
 
 function color(type){
-
-if(type==="فرهنگی")
-return "#2196f3";
-
-if(type==="پذیرایی")
-return "#22c55e";
-
-if(type==="خدماتی")
-return "#ff9800";
-
-return "#ef4444";
-
+  if(type === "فرهنگی") return "#2196f3";
+  if(type === "پذیرایی") return "#22c55e";
+  if(type === "خدماتی") return "#ff9800";
   if(type === "سرویس بهداشتی") return "#8e44ad";
+  if(type === "درمانی") return "#ef4444";
+  return "#ef4444";
 }
-
-
-
 
 
 function show(data){
@@ -1092,32 +1082,23 @@ document.getElementById("mokebCount").innerText=data.length;
 
 
 
-function filterType(type){
-
+function filterMokeb(type){
   if(type === "all"){
     show(allMapItems);
     return;
   }
 
-  show(
-    allMapItems.filter(x => {
+  if(type === "سرویس بهداشتی"){
+    show(allMapItems.filter(x =>
+      x.type === "سرویس بهداشتی" ||
+      String(x.name || "").includes("سرویس بهداشتی") ||
+      String(x.services || "").includes("سرویس بهداشتی")
+    ));
+    return;
+  }
 
-      // فیلتر مخصوص سرویس بهداشتی
-      if(type === "سرویس بهداشتی"){
-        return x.services === "سرویس بهداشتی" ||
-               x.name.includes("سرویس بهداشتی");
-      }
-
-      // فیلتر معمولی سایر دسته‌ها
-      return x.type === type;
-    })
-  );
-
+  show(mokebs.filter(x => x.type === type));
 }
-
-
-
-
 
 
 // جستجوی کامل در نام موکب، نام مدیر، آدرس، نوع، خدمات و شماره تماس
