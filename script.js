@@ -147,17 +147,7 @@ const mokebs=[
     "services": "ظرفیت ۵۰۰۰",
     "phone": "۰۹۱۲۲۸۶۰۰۷۶"
   },
-  {
-    "manager": "",
-    "city": "قرچک",
-    "area": "",
-    "location": "",
-    "name": "دولتی(فرمانداری وبخشداری مرکزی ودهیاریهای تابعه قرچک)",
-    "type": "پذیرایی",
-    "address": "مسیر پیاده روی جاماندگان اربعین",
-    "services": "ظرفیت ۵۰۰۰",
-    "phone": "۰۹۱۲۵۷۹۴۲۲۰"
-  },
+  
   {
     "manager": "",
     "city": "قرچک",
@@ -900,13 +890,16 @@ const servicePoints = [
     services: "سرویس بهداشتی"
   },
   {
-    name: "موکب شهرداری",
-    type: "خدماتی",
-    address: "۷۰۰ متر بعد طالب‌آباد",
-    lat: 35.46179,
-    lng: 51.55731,
-    services: "موکب شهرداری"
-  },
+    "manager": "",
+    "city": "قرچک",
+    "area": "",
+    "location": "",
+    "name": "دولتی(فرمانداری وبخشداری مرکزی ودهیاریهای تابعه قرچک)",
+    "type": "پذیرایی",
+    "address": "زیرپل",
+  "services": "ظرفیت ۵۰۰۰",
+    "phone": "۰۹۱۲۵۷۹۴۲۲۰",
+},
 {
     name: "مسجد - قلعه نو",
     type: "خدماتی",
@@ -923,6 +916,15 @@ const servicePoints = [
     lng: 51.53600,
     services: "مسجد"
   },
+  {
+  "name": "موکب شهرداری",
+  "type": "پذیرایی",
+  "address": "بین طالب آباد و قمی آباد",
+  "services": "ظرفیت نامشخص",
+  "phone": "",
+  "lat": 35.49687,
+  "lng": 51.52613
+},
   {
     name: "مدرسه - قلعه نو",
     type: "خدماتی",
@@ -1263,9 +1265,13 @@ map.setView(
 );
 
 
-
-const destination = [35.58518, 51.43778];
-
+const start=[35.44054,51.57129];
+const destination=[35.58518,51.43778];
+L.polyline(route,{
+color:"#FFD54F",
+weight:6
+})
+.addTo(map);
 
 
 document.getElementById("distanceInfo").innerHTML=
